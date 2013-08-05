@@ -7,6 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.appengine.api.users.User;
+import com.google.appengine.api.users.UserService;
+import com.google.appengine.api.users.UserServiceFactory;
+
 public class GuestbookServlet extends HttpServlet {
 
 	/**
@@ -18,10 +22,20 @@ public class GuestbookServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 
-		resp.setContentType("text/plain");
-		resp.getWriter().println("Hello, world");
+		UserService userService = UserServiceFactory.getUserService();
+		User user = userService.getCurrentUser();
 
-		//super.doGet(req, resp);
+		if (user != null) {
+			resp.setContentType("text/html");
+			resp.getWriter().println("Hello, " + user.getNickname());
+			resp.getWriter().println(
+					"<a href=\""
+							+ userService.createLogoutURL(req.getRequestURI())
+							+ "\">Logout</a>");
+		} else {
+			resp.sendRedirect(userService.createLoginURL(req.getRequestURI()));
+		}
+
+		// super.doGet(req, resp);
 	}
-
 }
