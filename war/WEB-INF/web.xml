@@ -15,20 +15,15 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
-	<servlet-mapping>
-		<servlet-name>greetServlet</servlet-name>
-		<url-pattern>/stockwatcher/greet</url-pattern>
-	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>loginService</servlet-name>
 		<servlet-class>com.google.gwt.sample.stockwatcher.server.LoginServiceImpl</servlet-class>
 	</servlet>
 
-	<servlet-mapping>
-		<servlet-name>loginService</servlet-name>
-		<url-pattern>/stockwatcher/login</url-pattern>
-	</servlet-mapping>
+	<servlet>
+		<servlet-name>stockService</servlet-name>
+		<servlet-class>com.google.gwt.sample.stockwatcher.server.StockServiceImpl</servlet-class>
+	</servlet>
 
 	<servlet>
 		<servlet-name>SystemServiceServlet</servlet-name>
@@ -38,6 +33,21 @@
 			<param-value />
 		</init-param>
 	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>greetServlet</servlet-name>
+		<url-pattern>/stockwatcher/greet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>loginService</servlet-name>
+		<url-pattern>/stockwatcher/login</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>stockService</servlet-name>
+		<url-pattern>/stockwatcher/stock</url-pattern>
+	</servlet-mapping>
 
 	<servlet-mapping>
 		<servlet-name>SystemServiceServlet</servlet-name>

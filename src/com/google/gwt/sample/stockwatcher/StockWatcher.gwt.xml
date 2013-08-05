@@ -24,6 +24,8 @@
 
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>
+  <source path='client/domain'/>
+  <source path='client/service'/>
   <source path='shared'/>
 
 </module>

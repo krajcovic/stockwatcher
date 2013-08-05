@@ -1,6 +1,6 @@
 package com.google.gwt.sample.stockwatcher.server;
 
-import com.google.gwt.sample.stockwatcher.client.GreetingService;
+import com.google.gwt.sample.stockwatcher.client.service.GreetingService;
 import com.google.gwt.sample.stockwatcher.shared.FieldVerifier;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 

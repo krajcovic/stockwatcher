@@ -1,4 +1,4 @@
-package com.google.gwt.sample.stockwatcher.client;
+package com.google.gwt.sample.stockwatcher.client.domain;
 
 import java.io.Serializable;
 
