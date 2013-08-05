@@ -4,27 +4,36 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee                http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
 	<!-- Default page to serve -->
-	<welcome-file-list>
+<!-- 	<welcome-file-list>
 		<welcome-file>StockWatcher.html</welcome-file>
-	</welcome-file-list>
+	</welcome-file-list> -->
 
 	<!-- Servlets -->
+	<!-- Greet servlet -->
 	<servlet>
 		<servlet-name>greetServlet</servlet-name>
 		<servlet-class>com.google.gwt.sample.stockwatcher.server.GreetingServiceImpl</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
+	<!-- Login servlet -->
 	<servlet>
 		<servlet-name>loginService</servlet-name>
 		<servlet-class>com.google.gwt.sample.stockwatcher.server.LoginServiceImpl</servlet-class>
 	</servlet>
 
+	<!-- Stock servlet -->
 	<servlet>
 		<servlet-name>stockService</servlet-name>
 		<servlet-class>com.google.gwt.sample.stockwatcher.server.StockServiceImpl</servlet-class>
 	</servlet>
 
+	<servlet>
+		<servlet-name>guestbook</servlet-name>
+		<servlet-class>com.google.gwt.sample.stockwatcher.server.GuestbookServlet</servlet-class>
+	</servlet>
+
+	<!-- Logger servlet -->
 	<servlet>
 		<servlet-name>SystemServiceServlet</servlet-name>
 		<servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
@@ -47,6 +56,11 @@
 	<servlet-mapping>
 		<servlet-name>stockService</servlet-name>
 		<url-pattern>/stockwatcher/stock</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>guestbook</servlet-name>
+		<url-pattern>/guestbook</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>
